@@ -7,10 +7,10 @@ from .. import data, helper
 from p2pool.util import pack
 
 
-P2P_PREFIX = 'fbc0b6db'.decode('hex')
-P2P_PORT = 12127
+P2P_PREFIX = 'fcc1b7dc'.decode('hex')
+P2P_PORT = 22127
 ADDRESS_VERSION = 34
-RPC_PORT = 12128
+RPC_PORT = 112128
 RPC_CHECK = defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
             'emeraldaddress' in (yield bitcoind.rpc_help()) and
             not (yield bitcoind.rpc_getinfo())['testnet']
@@ -18,7 +18,7 @@ RPC_CHECK = defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
 SUBSIDY_FUNC = lambda height: 0.1*100000000
 POW_FUNC = lambda data: pack.IntType(256).unpack(__import__('emd_scrypt').getPoWHash(data))
 BLOCK_PERIOD = 20
-SYMBOL = 'EMD'
+SYMBOL = 'tEMD'
 CONF_FILE_FUNC = lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'emerald') 
 		if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/emerald/') 
 		if platform.system() == 'Darwin' else os.path.expanduser('~/.emerald'), 'emerald.conf')

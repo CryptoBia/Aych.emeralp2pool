@@ -123,9 +123,9 @@ class mm_provider(object):
             "chainid" : 1
         }
 
-mynet = math.Object(
-    NAME='mynet',
-    PARENT=networks.nets['litecoin_testnet'],
+myEMDnet = math.Object(
+    NAME='myEMDnet',
+    PARENT=networks.nets['emerald_testnet'],
     SHARE_PERIOD=5, # seconds
     CHAIN_LENGTH=20*60//3, # shares
     REAL_CHAIN_LENGTH=20*60//3, # shares
@@ -133,12 +133,12 @@ mynet = math.Object(
     SPREAD=3, # blocks
     IDENTIFIER='cca5e24ec6408b1e'.decode('hex'),
     PREFIX='ad9614f6466a39cf'.decode('hex'),
-    P2P_PORT=19338,
+    P2P_PORT=22127,
     MIN_TARGET=2**256 - 1,
     MAX_TARGET=2**256 - 1,
     PERSIST=False,
     WORKER_PORT=19327,
-    BOOTSTRAP_ADDRS='72.14.191.28'.split(' '),
+    BOOTSTRAP_ADDRS='195.201.19.94'.split(' '),
     ANNOUNCE_CHANNEL='#p2pool-alt',
     VERSION_CHECK=lambda v: True,
 )

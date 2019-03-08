@@ -1,11 +1,11 @@
 from distutils.core import setup, Extension
 
-ltc_scrypt_module = Extension('ltc_scrypt',
+emd_scrypt_module = Extension('emd_scrypt',
                                sources = ['scryptmodule.c',
                                           'scrypt.c'],
                                include_dirs=['.'])
 
-setup (name = 'ltc_scrypt',
+setup (name = 'emd_scrypt',
        version = '1.0',
-       description = 'Bindings for scrypt proof of work used by Litecoin',
-       ext_modules = [ltc_scrypt_module])
+       description = 'Bindings for scrypt proof of work used by Emerald',
+       ext_modules = [emd_scrypt_module])

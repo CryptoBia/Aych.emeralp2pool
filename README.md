@@ -1,7 +1,7 @@
 Requirements:
 -------------------------
 Generic:
-* Bitcoin >=0.11.1
+* Emerald >=0.8.7.7
 * Python >=2.6
 * Twisted >=10.0.0
 * python-argparse (for Python =2.6)
@@ -20,43 +20,36 @@ Windows:
 
 Running P2Pool:
 -------------------------
-To use P2Pool, you must be running your own local bitcoind. For standard
+To use P2Pool, you must be running your own local emeraldd. For standard
 configurations, using P2Pool should be as simple as:
 
-    python run_p2pool.py
+    python run_p2pool.py --net emerald
 
-Then run your miner program, connecting to 127.0.0.1 on port 9332 with any
-username and password.
+Then run your miner program, connecting to 127.0.0.1 on port 12125 with your
+EMD_ADDRESS as username and c=EMD as password.
 
 If you are behind a NAT, you should enable TCP port forwarding on your
-router. Forward port 9333 to the host running P2Pool.
+router. Forward port 46858 to the host running P2Pool.
 
 Run for additional options.
 
     python run_p2pool.py --help
 
-Donations towards further development:
--------------------------
-    1HNeqi3pJRNvXybNX4FKzZgYJsdTSqJTbk
-
 Official wiki:
 -------------------------
 https://en.bitcoin.it/wiki/P2Pool
 
-Alternate web frontend:
--------------------------
-* https://github.com/hardcpp/P2PoolExtendedFrontEnd
 
-Notes for Litecoin:
+Notes for Emerald:
 =========================
 Requirements:
 -------------------------
-In order to run P2Pool with the Litecoin network, you would need to build and install the
-ltc_scrypt module that includes the scrypt proof of work code that Litecoin uses for hashes.
+In order to run P2Pool with the Emerald network, you would need to build and install the
+emd_scrypt module that includes the scrypt proof of work code that Emerald uses for hashes.
 
 Linux:
 
-    cd litecoin_scrypt
+    cd emerald_scrypt
     sudo python setup.py install
 
 Windows (mingw):
@@ -65,7 +58,7 @@ Windows (mingw):
 
 In bash type this:
 
-    cd litecoin_scrypt
+    cd emerald_scrypt
     C:\Python27\python.exe setup.py build --compile=mingw32 install
 
 Windows (Microsoft Visual C++)
@@ -75,24 +68,12 @@ In bash type this:
 
     SET VS90COMNTOOLS=%VS110COMNTOOLS%	           # For visual c++ 2012
     SET VS90COMNTOOLS=%VS100COMNTOOLS%             # For visual c++ 2010
-    cd litecoin_scrypt
+    cd emerald_scrypt
     C:\Python27\python.exe setup.py build --compile=mingw32 install
 	
 If you run into an error with unrecognized command line option '-mno-cygwin', see this:
 http://stackoverflow.com/questions/6034390/compiling-with-cython-and-mingw-produces-gcc-error-unrecognized-command-line-o
 
-Running P2Pool:
--------------------------
-Run P2Pool with the "--net litecoin" option.
-Run your miner program, connecting to 127.0.0.1 on port 9327.
-Forward port 9338 to the host running P2Pool.
-
-Litecoin's use of ports 9333 and 9332 conflicts with P2Pool running on
-the Bitcoin network. To avoid problems, add these lines to litecoin.conf
-and restart litecoind:
-
-    rpcport=10332
-    port=10333
 
 Sponsors:
 -------------------------
